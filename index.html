@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<style>
+			.fragment.blur {
+			  filter: blur(5px);
+			}
+			.fragment.blur.visible {
+			  filter: none;
+			}
+		  </style>
+		<script type="module">
+			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+			mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1
+					<p class="fragment fade-in">Slide up while fading in</p>
+				</section>
+				<section data-background-color="#eeebe3">Slide 2
+				<p style="line-height:2.5em"> </p>
+					<div class='mermaid fragment custom blur'>
+					graph TD
+					A[Enter Chart Definition] --> B(Preview)
+					B --> C{decide}
+					C --> D[Keep]
+					C --> E[Edit Definition]
+					E --> B
+					D --> F[Save Image and Code]
+					F --> B
+				</div>
+				</section>
+				<section data-markdown>
+					
+					## Slide 1
+					A paragraph with some text and a [link](https://hakim.se).
+
+					---
+
+					## Slide 2
+
+					---
+					
+					## Slide 3
+					
+
+					---
+					### Slide
+					
+					
+				  </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
